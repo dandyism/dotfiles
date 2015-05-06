@@ -3,7 +3,7 @@ set backspace=indent,eol,start
 syntax on
 
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('/home/jacob/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:

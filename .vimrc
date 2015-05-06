@@ -14,8 +14,8 @@ NeoBundle 'csv.vim'
 NeoBundle 'vim-coffee-script'
 "NeoBundle 'Flex-4'
 NeoBundle 'ervandew/supertab'
-NeoBundle 'ultisnips'
-NeoBundle 'vim-snippets'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build'      : {
         \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',

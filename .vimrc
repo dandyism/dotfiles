@@ -2,50 +2,61 @@ set nocompatible
 set backspace=indent,eol,start
 syntax on
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
-filetype off " required!
-call vundle#begin()
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('/home/jacob/.vim/bundle'))
 
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/Vundle.vim'
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-Plugin 'csv.vim'
-"Plugin 'wmgraphviz'
-Plugin 'vim-coffee-script'
-"Plugin 'Flex-4'
-Plugin 'ervandew/supertab'
-Plugin 'ultisnips'
-Plugin 'vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'morhetz/gruvbox'
-Plugin 'bling/vim-airline'
-Plugin 'mattn/emmet-vim'
-Plugin 'surround.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-speeddating'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'MatchTag'
-Plugin 'utl.vim'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'farseer90718/vim-taskwarrior'
-"Plugin 'VimFootnotes'
-Plugin 'mtth/scratch.vim'
-Plugin 'briancollins/vim-jst'
-Plugin 'digitaltoad/vim-jade'
-"Plugin 'vimoutliner/vimoutliner'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
-Plugin 'EasyMotion'
+NeoBundle 'csv.vim'
+"NeoBundle 'wmgraphviz'
+NeoBundle 'vim-coffee-script'
+"NeoBundle 'Flex-4'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'ultisnips'
+NeoBundle 'vim-snippets'
+NeoBundle 'Valloric/YouCompleteMe', {
+     \ 'build'      : {
+        \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+        \ }
+     \ }
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'surround.vim'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'MatchTag'
+NeoBundle 'utl.vim'
+NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'farseer90718/vim-taskwarrior'
+"NeoBundle 'VimFootnotes'
+NeoBundle 'mtth/scratch.vim'
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'digitaltoad/vim-jade'
+"NeoBundle 'vimoutliner/vimoutliner'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'EasyMotion'
 
-call vundle#end()
+" Required:
+call neobundle#end()
+
+" Required:
 filetype plugin indent on
+
+NeoBundleCheck
 
 " Searching
 set ignorecase

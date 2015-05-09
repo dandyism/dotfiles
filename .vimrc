@@ -25,7 +25,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
         \ }
      \ }
 NeoBundle 'morhetz/gruvbox'
-NeoBundle 'bling/vim-airline'
+"NeoBundle 'bling/vim-airline'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'surround.vim'
 NeoBundle 'Shougo/vimproc.vim', {
@@ -145,6 +145,12 @@ let g:gundo_right = 1
 set scrolloff=5
 
 " Airline
+"set laststatus=2
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#eclim#enabled = 1
+
+" Powerline
 set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#eclim#enabled = 1
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup

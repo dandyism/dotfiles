@@ -10,14 +10,11 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'csv.vim'
-"NeoBundle 'wmgraphviz'
 NeoBundle 'vim-coffee-script'
-"NeoBundle 'Flex-4'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'morhetz/gruvbox'
-"NeoBundle 'bling/vim-airline'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'surround.vim'
 NeoBundle 'Shougo/vimproc.vim', {
@@ -39,11 +36,9 @@ NeoBundle 'MatchTag'
 NeoBundle 'utl.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'farseer90718/vim-taskwarrior'
-"NeoBundle 'VimFootnotes'
 NeoBundle 'mtth/scratch.vim'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'digitaltoad/vim-jade'
-"NeoBundle 'vimoutliner/vimoutliner'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -130,11 +125,6 @@ let g:gundo_right = 1
 
 " Scroll offset
 set scrolloff=5
-
-" Airline
-"set laststatus=2
-"let g:airline_powerline_fonts = 1
-"let g:airline#extensions#eclim#enabled = 1
 
 " Powerline
 set laststatus=2

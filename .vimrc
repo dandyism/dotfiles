@@ -45,6 +45,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'EasyMotion'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'mhinz/vim-startify'
 
 " Required:
 call neobundle#end()
@@ -135,3 +136,7 @@ python del powerline_setup
 " Hightlight unwanted whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" Startify
+let g:startify_custom_header =
+  \ map(split(system('fortune -s | cowsay -n'), '\n'), '"   ". v:val') + ['','']

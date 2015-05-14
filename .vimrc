@@ -16,14 +16,6 @@ NeoBundle 'vim-coffee-script'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'Valloric/YouCompleteMe', {
-     \ 'build'      : {
-        \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-        \ }
-     \ }
 NeoBundle 'morhetz/gruvbox'
 "NeoBundle 'bling/vim-airline'
 NeoBundle 'mattn/emmet-vim'
@@ -57,6 +49,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'EasyMotion'
+NeoBundle 'Shougo/neocomplete.vim'
 
 " Required:
 call neobundle#end()
@@ -115,17 +108,11 @@ map gf :Utl<CR>
 " Leader
 let mapleader = ","
 
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
-
-" YouCompleteMe + UtliSnips via supertab
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 " Auto Mkdir
 au BufWrite * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')

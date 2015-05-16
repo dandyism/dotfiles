@@ -1,0 +1,5 @@
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set hintchars=hjklasdf
+set editor="sakura -e vim"
+
+colorscheme darkness

@@ -30,13 +30,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'MatchTag'
-NeoBundle 'utl.vim'
-NeoBundle 'dhruvasagar/vim-table-mode'
-NeoBundle 'farseer90718/vim-taskwarrior'
-NeoBundle 'mtth/scratch.vim'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'scrooloose/syntastic'
@@ -101,9 +96,6 @@ set tabstop=2 shiftwidth=2 expandtab autoindent
 " Dictionaries
 set dict=/usr/share/dict/american-english-huge
 
-" UTL
-map gf :Utl<CR>
-
 " Leader
 let mapleader = ","
 
@@ -115,14 +107,6 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 " Auto Mkdir
 au BufWrite * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \\')
-
-" Knowledgebase
-function OpenKnowledgebase()
-  cd ~/knowledgebase
-  e index.txt
-endfunction
-
-map <Leader>kb :call OpenKnowledgebase()<CR>
 
 " Gundo
 let g:gundo_right = 1

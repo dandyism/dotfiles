@@ -141,3 +141,9 @@ match ExtraWhitespace /\s\+$/
 " Startify
 let g:startify_custom_header =
   \ map(split(system('fortune -s | cowsay -n'), '\n'), '"   ". v:val') + ['','']
+
+" Use control + movement keys for easier motion between windows
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

@@ -57,9 +57,11 @@ filetype plugin indent on
 NeoBundleCheck
 
 " Searching
-set ignorecase
-set grepprg=ag\ --vimgrep\ $*
-set grepformat=%f:%l:%c:%m
+if executable('ag')
+  set ignorecase
+  set grepprg=ag\ --vimgrep\ $*
+  set grepformat=%f:%l:%c:%m
+endif
 
 " Unite.vim
 call unite#custom#source('file_rec/async', 'ignore_pattern', join([
@@ -139,8 +141,10 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 " Startify
-let g:startify_custom_header =
-  \ map(split(system('fortune -s | cowsay -n'), '\n'), '"   ". v:val') + ['','']
+if and(executable('fortune'), executable('cowsay'))
+  let g:startify_custom_header =
+    \ map(split(system('fortune -s | cowsay -n'), '\n'), '"   ". v:val') + ['','']
+endif
 
 " Use control + movement keys for easier motion between windows
 nnoremap <C-J> <C-W><C-J>

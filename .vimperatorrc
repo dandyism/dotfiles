@@ -3,3 +3,20 @@ set hintchars=hjklasdf
 set editor="sakura -e vim"
 
 colorscheme darkness
+
+" Don't report everything I download to Google
+set! browser.safebrowsing.appRepURL=""
+set! browser.safebrowsing.debug=false
+set! browser.safebrowsing.downloads.enabled=false
+set! browser.safebrowsing.downloads.remote.enabled=false
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.gethashURL=""
+set! browser.safebrowsing.malware.enabled=false
+set! browser.safebrowsing.malware.reportURL=""
+set! browser.safebrowsing.reportErrorURL=""
+set! browser.safebrowsing.reportGenericURL=""
+set! browser.safebrowsing.reportMalwareErrorURL=""
+set! browser.safebrowsing.reportMalwareURL=""
+set! browser.safebrowsing.reportPhishURL=""
+set! browser.safebrowsing.reportURL=""
+set! browser.safebrowsing.updateURL=""

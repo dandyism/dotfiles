@@ -46,6 +46,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'EasyMotion'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'mhinz/vim-startify'
+NeoBundle 'majutsushi/tagbar'
 
 " Required:
 call neobundle#end()

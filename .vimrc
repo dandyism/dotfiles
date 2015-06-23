@@ -9,14 +9,6 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'csv.vim'
-NeoBundle 'vim-coffee-script'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'surround.vim'
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
@@ -27,21 +19,35 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/neocomplete.vim'
+
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-fugitive'
+
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+
+NeoBundle 'csv.vim'
+NeoBundle 'vim-coffee-script'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'MatchTag'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'EasyMotion'
-NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'vimoutliner/vimoutliner'
+NeoBundle 'parkr/vim-jekyll'
+NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'marijnh/tern_for_vim', {'build': {'linux': 'npm install'}}
 
 " Required:
 call neobundle#end()
@@ -59,12 +65,13 @@ if executable('ag')
 endif
 
 " Unite.vim
+let g:unite_force_overwrite_statusline = 0
 call unite#custom#source('file_rec/async', 'ignore_pattern', join([
       \ "\.git/",
       \ "bower_components/",
       \ "node_modules/"
       \ ], '\|'))
-nnoremap <C-p> :Unite -start-insert -auto-resize tab:no-current file_rec/async<cr>
+nnoremap <C-p> :Unite -start-insert -buffer-name=files -wipe -no-resize -no-split tab:no-current file_rec/async:!<CR>
 
 " CSV
 let g:csv_delimiter = ','
@@ -80,7 +87,6 @@ set t_Co=256
 set background=dark
 colo gruvbox
 
-" Editing
 set  number
 noremap j gj
 noremap k gk
@@ -101,6 +107,7 @@ let mapleader = ","
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_close_preview = 1
 
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
@@ -138,3 +145,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " Syntastic
 let g:syntastic_check_on_open = 1
+
+" vimfiler
+let g:vimfiler_as_default_explorer = 1

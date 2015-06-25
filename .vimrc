@@ -48,6 +48,7 @@ NeoBundle 'vimoutliner/vimoutliner'
 NeoBundle 'parkr/vim-jekyll'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'marijnh/tern_for_vim', {'build': {'linux': 'npm install'}}
+NeoBundle 'junegunn/vim-easy-align'
 
 " Required:
 call neobundle#end()
@@ -148,3 +149,7 @@ let g:syntastic_check_on_open = 1
 
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
+
+" Easy Align
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Enter> <Plug>(EasyAlign)

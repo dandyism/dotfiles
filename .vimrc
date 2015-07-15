@@ -110,6 +110,7 @@ let mapleader = ","
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_auto_close_preview = 1
+call neocomplete#custom#source('buffer', 'disabled', 1)
 
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'

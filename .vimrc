@@ -49,6 +49,7 @@ NeoBundle 'parkr/vim-jekyll'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'marijnh/tern_for_vim', {'build': {'linux': 'npm install'}}
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'aklt/plantuml-syntax'
 
 " Required:
 call neobundle#end()

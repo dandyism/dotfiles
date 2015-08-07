@@ -41,7 +41,7 @@ NeoBundle 'briancollins/vim-jst'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'EasyMotion'
+NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'vimoutliner/vimoutliner'
@@ -49,7 +49,20 @@ NeoBundle 'parkr/vim-jekyll'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'marijnh/tern_for_vim', {'build': {'linux': 'npm install'}}
 NeoBundle 'junegunn/vim-easy-align'
+<<<<<<< Updated upstream
 NeoBundle 'aklt/plantuml-syntax'
+=======
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'Quramy/tsuquyomi'
+NeoBundle 'aklt/plantuml-syntax'
+NeoBundle 'wannesm/wmgraphviz.vim'
+NeoBundle 'yuratomo/flex-api-complete'
+NeoBundle 'clones/vim-flash'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'vimwiki/vimwiki', 'dev'
+NeoBundle 'rking/ag.vim'
+>>>>>>> Stashed changes
 
 " Required:
 call neobundle#end()
@@ -58,6 +71,18 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
+
+" Actionscript + MXML
+au BufNewFile,BufRead *.as    setl omnifunc=flexapi#complete
+au BufNewFile,BufRead *.mxml  setf xml
+au BufNewFile,BufRead *.mxml  setl omnifunc=mxml#complete
+
+au CompleteDone *.as          call flexapi#showRef()
+
+if has("balloon_eval") && has("balloon_multiline")
+  au BufNewFile,BufRead *.as  setl bexpr=flexapi#balloon()
+  au BufNewFile,BufRead *.as  setl ballooneval
+endif
 
 " Searching
 if executable('ag')
@@ -81,13 +106,13 @@ let g:csv_nl = 1
 
 " GUI
 if has("gui_running")
-  set guioptions-=T
-  set guifont=Inconsolata\ 12
+  set guioptions=fgp
+  set guifont=Terminus\ 11
 endif
 
 set t_Co=256
 set background=dark
-colo gruvbox
+colo zazen
 
 set  number
 noremap j gj
@@ -99,7 +124,7 @@ set switchbuf=usetab,newtab
 
 " Indenting
 set shiftround
-set tabstop=2 shiftwidth=2 expandtab autoindent
+set tabstop=4 shiftwidth=4 expandtab autoindent
 
 " Dictionaries
 set dict=/usr/share/dict/american-english-huge
@@ -111,6 +136,14 @@ let mapleader = ","
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_auto_close_preview = 1
 call neocomplete#custom#source('buffer', 'disabled', 1)
+<<<<<<< Updated upstream
+=======
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.java = '\%(\h\w*\|)\)\.\w*'
+>>>>>>> Stashed changes
 
 " Eclim
 let g:EclimCompletionMethod = 'omnifunc'
